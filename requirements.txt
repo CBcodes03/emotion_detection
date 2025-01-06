@@ -2,4 +2,5 @@ streamlit
 opencv-python
 opencv-python-headless
 deepface
-tensorflow==2.8.0
+tensorflow==2.6.0
+keras==2.6.0
