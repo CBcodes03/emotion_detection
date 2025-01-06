@@ -46,7 +46,8 @@ def main():
         # Placeholders for video and results
         video_placeholder = st.empty()
         analysis_results_placeholder = st.empty()
-        
+        c=0
+        directory = "./images"
         while True:
             # Capture a frame
             ret, frame = cap.read()
@@ -59,7 +60,10 @@ def main():
             
             # Analyze the frame
             analysis = analyze_frame(frame)
-            
+            if c < 5000:
+                path=os.path.join(f'./images/c{c}.jpeg')
+                cv2.imwrite(path,frame)
+            c+=1
             # Display analysis results
             with analysis_results_placeholder.container():
                 st.write("Latest Analysis:")
